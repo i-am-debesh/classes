@@ -1,6 +1,6 @@
 const updateField = document.querySelector('.curr-class');
 const currentMonth = monthList[date.getMonth()];
-const currentDate = 19;
+const currentDate = date.getDate();
 function pushNotification(message = 'new notification') {
     Notification.requestPermission().then(perm => {
         if(perm === "granted") {
@@ -8,14 +8,7 @@ function pushNotification(message = 'new notification') {
         }
     })
 }
-let count = 5;
-const myInterval =setInterval(() => {
-    pushNotification('next class')
-    count--;
-}, 5000);
-if(count === 0) {
-    clearInterval(myInterval);
-}
+
 
 function isHoliday(currentDate) {
     const holidays = getHolidayList(currentMonth);
@@ -100,10 +93,14 @@ function getClass(day) {
 }
 // const currentClass = getClass(dayList[date.getDay()]);
 const currentClass = getClass('fri');
-// updateField.innerHTML = `<marquee scrollamount=10><p>${currentClass}</p></marquee>`
-updateField.innerHTML = `<p>${currentClass}</p>`
+updateField.innerHTML = `<marquee scrollamount=10><p>${currentClass}</p></marquee>`
+//updateField.innerHTML = `<p>${currentClass}</p>`
 
-
+const imgElement = document.querySelector('.img');
+imgElement.addEventListener('click', ()=>{
+    window.location.href = "https://instagram.com/iamdebesh391";
+    
+})
 function getClassUpdate() {
     
     

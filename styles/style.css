@@ -4,14 +4,20 @@ body{
     background-color: rgb(14, 14, 39);
     color: white;
     text-align: center;
+    
+}
+.container {
+    /* background-color: green; */
+    width: 400px;
 }
 .curr-class {
+    /* display: flex; */
     background-color: rgba(126, 142, 162, 0.593);
-    width: 500px;
+    width: 400px;
     justify-content: center;
-    text-align: center;
+    
     color: black;
-    margin-left: 125px;
+    
     border-radius: 2px;
     
 }
@@ -26,6 +32,10 @@ nav {
     height: 50px;
     padding-top: 10px;
     padding-bottom: 5px;
+}
+.main{
+    display: flex;
+    justify-content: center;
 }
 .full-period{
 
@@ -69,9 +79,11 @@ nav {
     height: 30px;
     width: 30px;
     margin-bottom: -10px;
+    cursor: pointer;
 }
 .insta-username{
     margin-top: 2px;
     font-size: 30px;
+    
 }
 

@@ -1,7 +1,7 @@
 const boxElement = document.getElementById('full-period');
 
 
-let day = dayList[date.getDay()+5];
+let day = dayList[date.getDay()+1];
 const classLength = getClassList(day).length;
 const classes = getClassList(day);
 // console.log(classes);
