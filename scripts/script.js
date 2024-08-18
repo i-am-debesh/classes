@@ -1,6 +1,6 @@
 const updateField = document.querySelector('.curr-class');
-
-
+const currentMonth = monthList[date.getMonth()];
+const currentDate = 19;
 function pushNotification(message = 'new notification') {
     Notification.requestPermission().then(perm => {
         if(perm === "granted") {
@@ -8,6 +8,25 @@ function pushNotification(message = 'new notification') {
         }
     })
 }
+let count = 5;
+const myInterval =setInterval(() => {
+    pushNotification('next class')
+    count--;
+}, 5000);
+if(count === 0) {
+    clearInterval(myInterval);
+}
+
+function isHoliday(currentDate) {
+    const holidays = getHolidayList(currentMonth);
+    for(let i=0; i<holidays.length; i++) {
+        if(currentDate === holidays[i]){
+            return false;
+        }
+    }
+    return true;
+}
+
 
 function hourToMin(hr,min) {
     return (hr*60)+min;
@@ -30,6 +49,11 @@ let index = -1;
 function getClass(day) {
     let currClassName = ''; 
     
+    if(isHoliday(currentDate) === true) {
+        currClassName = 'Today is Holiday';
+        return currClassName;
+    }
+    
     
     if(day === 'sat' || day === 'sun') {
         return 'No Classes for Today.';
@@ -37,8 +61,8 @@ function getClass(day) {
         
     const classList = getClassList(day);
     //console.log(classList);
-    //const CurrTimeMin = hourToMin(date.getHours(), date.getMinutes());
-    const CurrTimeMin = hourToMin(9,32);
+    // const CurrTimeMin = hourToMin(date.getHours(), date.getMinutes());
+    const CurrTimeMin = hourToMin(13,31);
 
 
     //if break::
@@ -50,10 +74,10 @@ function getClass(day) {
 
     }
     if(CurrTimeMin < hourToMin(8,30)) {
-        return 'Class has not started yet.';
+        return "Classes haven't started yet.";
     }
     if(CurrTimeMin > hourToMin(16,30)) {
-        return 'All classes has been Completed.';
+        return 'All the classes are finished.';
     }
 
     //console.log('curr time is: ',CurrTimeMin)
@@ -71,12 +95,13 @@ function getClass(day) {
         
     }
 
-    return currClassName;
+    return 'Current class: '+currClassName;
     
 }
-const currentClass = getClass('tue');
-updateField.innerHTML = `<p>Current Class: ${currentClass}</p>`
-
+// const currentClass = getClass(dayList[date.getDay()]);
+const currentClass = getClass('fri');
+// updateField.innerHTML = `<marquee scrollamount=10><p>${currentClass}</p></marquee>`
+updateField.innerHTML = `<p>${currentClass}</p>`
 
 
 function getClassUpdate() {
