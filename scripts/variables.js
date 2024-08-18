@@ -5,7 +5,5 @@ const currClassElement = document.querySelector('.curr-class');
 
 const currentDay = dayList[date.getDay()];
 
-
-
 currDateElement.innerHTML = `${currentDay.toUpperCase()} : ${date.getDate()}.${date.getMonth()+1}.${date.getFullYear()}`;
 currTimeElemet.innerHTML = `Time: ${date.getHours()}:${date.getMinutes()}`

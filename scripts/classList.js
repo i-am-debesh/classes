@@ -1,8 +1,8 @@
-const classes_Aug = [5,12,19,6,13,20,27,7,14,21,28,1,8,22,29,2,9,16,23,30,20];
-const classes_sept = [5,12,19,6,13,20,27,7,14,21,28,1,8,22,29,2,9,16,23,30,20];
-const classes_oct = [5,12,19,6,13,20,27,7,14,21,28,1,8,22,29,2,9,16,23,30,20];
-const classes_nov = [5,12,19,6,13,20,27,7,14,21,28,1,8,22,29,2,9,16,23,30,20];
-const classes_dec = [5,12,19,6,13,20,27,7,14,21,28,1,8,22,29,2,9,16,23,30,20];
+const classes_Aug = [5,12,19,6,13,20,27,7,14,21,28,1,8,22,29,2,9,16,23,30];
+const classes_sept = [2,9,23,30,3,10,24,4,11,18,25,5,12,19,26,6,13,20,27];
+const classes_oct = [21,28,1,29,23,30,3,24,4,25];
+const classes_nov = [4,11,18,5,12,19,6,20,7,14,21,8,22];
+const classes_dec = [];
 let date = new Date();
 
 const monClasses = [
@@ -199,8 +199,18 @@ function getHolidayList(month) {
     if(month === 'aug') {
         return classes_Aug;
     }
-    else if(month === 'sep') {
+    else if(month === 'sept') {
         return classes_sept;
     }
+    else if(month === 'oct') {
+        return classes_oct;
+    }
+    else if(month === 'nov') {
+        return classes_nov;
+    }
+    else if(month === 'dec') {
+        return classes_dec;
+    }
+    
 }
 

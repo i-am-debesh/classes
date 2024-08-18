@@ -32,6 +32,8 @@ nav {
     height: 50px;
     padding-top: 10px;
     padding-bottom: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
 }
 .main{
     display: flex;
@@ -80,10 +82,15 @@ nav {
     width: 30px;
     margin-bottom: -10px;
     cursor: pointer;
+    
 }
 .insta-username{
     margin-top: 2px;
     font-size: 30px;
     
 }
-
+.general-info {
+    background-color: rgba(73, 73, 75, 0.16);
+    font-style: italic;
+    padding: 7px;
+}

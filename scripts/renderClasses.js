@@ -1,15 +1,17 @@
 const boxElement = document.getElementById('full-period');
 
 
-let day = dayList[date.getDay()+1];
+let day = dayList[date.getDay()];
 const classLength = getClassList(day).length;
 const classes = getClassList(day);
 // console.log(classes);
 let listHtml = ``;
-for(let i = 0; i<classLength; i++) {
-    listHtml = listHtml + `<div class="period-${i} sub-period" id="period-${i}"><p class="class-name">${classes[i].name}</p></div>`
-}
 
+if(!isHoliday(currentDate)){
+    for(let i = 0; i<classLength; i++) {
+        listHtml = listHtml + `<div class="period-${i} sub-period" id="period-${i}"><p class="class-name">${classes[i].name}</p></div>`
+    }
+}
 
 
 boxElement.innerHTML = listHtml;

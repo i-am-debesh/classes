@@ -1,5 +1,5 @@
 const updateField = document.querySelector('.curr-class');
-const currentMonth = monthList[date.getMonth()];
+const currentMonth = monthList[(date.getMonth())];
 const currentDate = date.getDate();
 function pushNotification(message = 'new notification') {
     Notification.requestPermission().then(perm => {
@@ -12,6 +12,7 @@ function pushNotification(message = 'new notification') {
 
 function isHoliday(currentDate) {
     const holidays = getHolidayList(currentMonth);
+    
     for(let i=0; i<holidays.length; i++) {
         if(currentDate === holidays[i]){
             return false;
@@ -54,8 +55,8 @@ function getClass(day) {
         
     const classList = getClassList(day);
     //console.log(classList);
-    // const CurrTimeMin = hourToMin(date.getHours(), date.getMinutes());
-    const CurrTimeMin = hourToMin(13,31);
+    const CurrTimeMin = hourToMin(date.getHours(), date.getMinutes());
+    //const CurrTimeMin = hourToMin(8,31);
 
 
     //if break::
@@ -92,7 +93,7 @@ function getClass(day) {
     
 }
 // const currentClass = getClass(dayList[date.getDay()]);
-const currentClass = getClass('fri');
+const currentClass = getClass(dayList[date.getDay()]);
 updateField.innerHTML = `<marquee scrollamount=10><p>${currentClass}</p></marquee>`
 //updateField.innerHTML = `<p>${currentClass}</p>`
 
