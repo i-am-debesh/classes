@@ -1,0 +1,53 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgb(14, 14, 39);
+    color: white;
+    text-align: center;
+}
+
+.update-box {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+nav {
+    background-color: rgba(52, 83, 52, 0.274);
+    margin-top: 0;
+    height: 50px;
+    padding-top: 10px;
+    padding-bottom: 5px;
+}
+.full-period{
+
+    width: 300px;
+    height: fit-content;
+    background-color: gray;
+    display: flex;
+    flex-direction: column;
+    border: none;
+    border-radius: 5px;
+
+}
+.sub-period {
+    width: 229px;
+    height: 93px;
+    background-color: rgb(255, 255, 255);
+    margin: 20px;
+    overflow-wrap: anywhere;
+    padding: 15px;
+    color: black;
+    border-radius: 5px;
+    
+}
+.sub-period p {
+    justify-content: center;
+    text-align: center;
+    top: 50%;
+    bottom: 50%;
+    font-size: 20px;
+    /* background-color: rgb(31, 107, 31); */
+}
+.running-class {
+    background-color: rgb(37, 92, 37);
+}
