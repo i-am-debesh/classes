@@ -78,6 +78,10 @@ nav {
     background-color: rgba(31, 194, 31, 0.445);
     box-shadow: 2px 2px 10px rgb(1, 6, 2);
 }
+.ended-class {
+    color: red;
+    font-weight: bold;
+}
 .insta-icon {
     height: 30px;
     width: 30px;
