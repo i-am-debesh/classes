@@ -4,6 +4,8 @@ const currClassElement = document.querySelector('.curr-class');
 
 
 const currentDay = dayList[date.getDay()];
-
-currDateElement.innerHTML = `${currentDay.toUpperCase()} : ${date.getDate()}.${date.getMonth()+1}.${date.getFullYear()}`;
-currTimeElemet.innerHTML = `Time: ${date.getHours()}:${date.getMinutes()}`
+function formatDateTime(value) {
+    return value < 10? '0'+value: value;
+}
+currDateElement.innerHTML = `${currentDay.toUpperCase()} : ${formatDateTime(date.getDate())}.${formatDateTime(date.getMonth()+1)}.${date.getFullYear()}`;
+currTimeElemet.innerHTML = `Time: ${formatDateTime(date.getHours())}:${formatDateTime(date.getMinutes())}`;

@@ -9,7 +9,10 @@ let listHtml = ``;
 
 if(!isHoliday(currentDate)){
     for(let i = 0; i<classLength; i++) {
-        listHtml = listHtml + `<div class="period-${i} sub-period" id="period-${i}"><p class="class-name">${classes[i].name}</p></div>`
+        listHtml = listHtml + `<div class="period-${i} sub-period" id="period-${i}">
+        <p class="class-name">${classes[i].name}</p>
+        <p class="class-time">starting at ${classes[i].timeHrs > 12? classes[i].timeHrs -12:classes[i].timeHrs}:${classes[i].timeMin}</p>
+        </div>`
     }
 }
 
